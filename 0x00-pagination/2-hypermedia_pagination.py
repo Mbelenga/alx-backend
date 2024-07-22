@@ -55,14 +55,14 @@ def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         Return a dictionary with hypermedia info
         """
         data = self.get_page(page, page_size)
-        start_idx, end_idx = index_range(page, page_size)
+        start_index, end_index = index_range(page, page_size)
         total_pages = math.ceil(len(self.dataset()) / page_size)
 
         return {
             'page_size': len(data),
             'page': page,
             'data': data,
-            'next_page': page + 1 if end_idx < len(self.__dataset) else None,
-            'prev_page': page - 1 if start_idx > 0 else None,
+            'next_page': page + 1 if end_index < len(self.__dataset) else None,
+            'prev_page': page - 1 if start_index > 0 else None,
             'total_pages': total_pages,
             }
