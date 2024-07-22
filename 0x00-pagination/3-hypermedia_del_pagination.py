@@ -54,7 +54,7 @@ class Server:
         data = dataset[start_index:end_index]
 
         return {
-            'index': start_idx,
+            'index': start_index,
             'next_index': next_index,
             'page_size': page_size,
             'data': data
