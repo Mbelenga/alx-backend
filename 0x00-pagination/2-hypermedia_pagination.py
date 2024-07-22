@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-""" Pagination """
+""" Hypermedia pagination """
+
 
 import csv
 import math
@@ -8,8 +9,7 @@ from typing import List
 
 def index_range(page: int, page_size: int) -> tuple:
     """
-    return a tuple of size two containing a start index
-    and an end index
+    return a tuple of size two containing a start idx & an end idx
     """
     start_index = (page - 1) * page_size
     end_index = start_index + page_size
@@ -50,7 +50,7 @@ class Server:
 
         return dataset[start_index:end_index]
 
-def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """
         Return a dictionary with hypermedia info
         """
