@@ -19,7 +19,7 @@ class FIFOCache(BaseCaching):
                 print("DISCARD: {}".format(discarded_key))
                 self.cache_data[key] = item
 
-                def get(self, key):
-                    """ Get an item by key """
-                    if key is not None:
-                        return self.cache_data.get(key)
+    def get(self, key):
+        """ Get an item by key """
+        if key is not None:
+            return self.cache_data.get(key)
