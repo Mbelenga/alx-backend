@@ -23,3 +23,4 @@ class LIFOCache(BaseCaching):
         """ Get item from cache """
         if key in self.cache_data:
             return self.cache_data[key]
+
